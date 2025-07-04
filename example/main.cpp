@@ -1,17 +1,12 @@
 #include <QCoreApplication>
 #include <QThread>
-#include <QSharedPointer>
 #include <QTimer>
 #include <QDebug>
-#include "QBroker.h"
-#include <qtcpsocket.h>
-#include <qlocalsocket.h>
-#include <QtEndian>
-#include <QDataStream>
 #include <qsemaphore.h>
 #include <QTime>
 
-#include "Client.h"
+#include "src/Client.h"
+#include "src/QBroker.h"
 
 const int count = 100;
 
@@ -82,7 +77,6 @@ protected:
 					time.start();
 				}
 				qDebug() << "=============messageReceivedCount====================" << number;
-				//messageReceivedCount++;
 				if (number == count)
 				{
 					qDebug() << "=================================" << time.elapsed();

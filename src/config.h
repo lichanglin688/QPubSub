@@ -1,6 +1,6 @@
 #pragma once
 
-//#define BROKER_TCP 0 // Define this to use TCP, otherwise it will use local sockets
+#define BROKER_TCP 0 // Define this to use TCP, otherwise it will use local sockets
 
 #ifdef BROKER_TCP
 #include <QTcpServer>

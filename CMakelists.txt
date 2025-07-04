@@ -4,8 +4,6 @@ project(QPubsub LANGUAGES CXX)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /utf-8")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /utf-8")
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
@@ -14,10 +12,14 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-
-file(GLOB_RECURSE cpp_files *.cpp *.h *.ui *.hpp)
-
-add_executable(${PROJECT_NAME} Client.cpp IoPacker.cpp QBroker.cpp ThreadPoolManager.cpp SocketSession.cpp "main.cpp")
+add_executable(${PROJECT_NAME} 
+example/main.cpp
+src/Client.cpp 
+src/IoPacker.cpp 
+src/QBroker.cpp 
+src/ThreadPoolManager.cpp 
+src/SocketSession.cpp 
+)
 
 find_package(Qt5 COMPONENTS Core network REQUIRED)
 target_link_libraries(${PROJECT_NAME} PUBLIC Qt5::Core Qt5::Network)
